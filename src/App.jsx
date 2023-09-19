@@ -5,13 +5,8 @@ function App() {
   const initialCount = +localStorage.getItem("storageCount") || 0;
   const [count, setCount] = useState(initialCount);
 
-  const handleIncrement = () => {
-    setCount((currentCount) => currentCount + 1);
-  };
-
-  const handleDecrement = () => {
-    setCount((currentCount) => currentCount - 1);
-  };
+  const handleIncrement = () => setCount(count + 1);
+  const handleDecrement = () => setCount(count - 1);
 
   useEffect(() => {
     localStorage.setItem("storageCount", count);
